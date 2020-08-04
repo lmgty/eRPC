@@ -36,8 +36,7 @@ public class ServerController {
             Method method = clazz.getMethod(methodName, argTypeArray);
             Object result = method.invoke(clazz.newInstance(), argValueArray);
 
-            Result re = Result.getSuccessResult(method.getReturnType().getName(), JSON.toJSONString(result));
-            return re;
+            return Result.getSuccessResult(method.getReturnType().getName(), JSON.toJSONString(result));
 
         } catch (Exception e) {
             e.printStackTrace();
